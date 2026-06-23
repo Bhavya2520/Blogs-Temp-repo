@@ -116,7 +116,6 @@ Go to Amazon S3 and create a new bucket:
 
 > ⚠️ S3 bucket names must be globally unique across all AWS accounts. If `my-company-backup-bucket` is taken, add a suffix like your AWS account ID or a random string.
 
-[Insert Screenshot Here: S3 bucket creation form with Block Public Access enabled]
 
 ## Step 3 — Create IAM Role for EC2
 
@@ -131,7 +130,6 @@ Here is how to set it up:
 
 Then attach the role to the instance: EC2 Console → Select your instance → **Actions → Security → Modify IAM Role → Select EC2-S3-Backup-Role**
 
-[Insert Screenshot Here: IAM role creation with EC2 as the trusted entity and AmazonS3FullAccess policy selected]
 
 ## Step 4 — Connect to EC2
 
@@ -255,8 +253,6 @@ chmod +x backup.sh
 Backup completed successfully
 ```
 
-[Insert Screenshot Here: Terminal showing "Backup completed successfully" after running the script]
-
 ## Step 10 — Verify in S3
 
 Open your bucket in the Amazon S3 Console. You should see a file similar to:
@@ -264,8 +260,6 @@ Open your bucket in the Amazon S3 Console. You should see a file similar to:
 ```
 backup-2026-05-14-10-20-00.tar.gz
 ```
-
-[Insert Screenshot Here: S3 console showing the uploaded backup file with timestamp in name]
 
 ## Step 11 — Verify Backup Content (Optional but Recommended)
 
@@ -462,8 +456,6 @@ Verify the lifecycle rule is in place using the CLI:
 ```bash
 aws s3api get-bucket-lifecycle-configuration --bucket my-company-backup-bucket
 ```
-
-[Insert Screenshot Here: S3 Management tab showing the lifecycle rule configured with Glacier transition at 30 days and expiration at 90 days]
 
 ---
 
@@ -1022,5 +1014,3 @@ Feel free to connect and discuss with me — whether you hit an error, have a qu
 📧 [bhavyat2520@gmail.com](mailto:bhavyat2520@gmail.com)
 
 ---
-
-*Written by a DevOps practitioner documenting real-world AWS backup implementation. Every command in this article was tested on a live EC2 instance.*
